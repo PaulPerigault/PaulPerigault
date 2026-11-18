@@ -1,75 +1,54 @@
-<h1 align="center">Paul Perigault</h1>
+# Cloud & DevOps Engineer | [paulperigault.fr](https://paulperigault.fr)
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&pause=1000&color=0D9488&center=true&vCenter=true&width=500&lines=DevOps+Engineer+%40+WeVii;ESIEA+Paris+%E2%80%94+Cycle+Ing%C3%A9nieur;Cloud+%C2%B7+CI%2FCD+%C2%B7+Security" alt="Typing SVG" />
-</p>
+I am Paul Perigault. I build small command-line tools and services in Go, describe infrastructure in OpenTofu, and run them through CI that pins every action and image. This page lists only what is public and what the code in those repositories shows.
 
-<p align="center">
-  <a href="https://paulperigault.fr"><img src="https://img.shields.io/badge/paulperigault.fr-0d9488?style=for-the-badge&logo=google-chrome&logoColor=white"/></a>
-  <a href="https://linkedin.com/in/paul-perigault"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
-  <a href="mailto:contact@paulperigault.fr"><img src="https://img.shields.io/badge/contact@paulperigault.fr-0d9488?style=for-the-badge&logo=mail.ru&logoColor=white"/></a>
-  <img src="https://komarev.com/ghpvc/?username=PaulPerigault&style=for-the-badge&color=0d9488"/>
-</p>
+## Context
 
----
+This README replaces the version written in April 2026, which embedded third-party statistics images and listed technologies with no public repository behind them. In November 2026 I rebuilt my repositories one at a time with the same method: one command to run, tools pinned by digest or hash, secret scanning on the full history, a README whose sample output is generated. Repositories I no longer maintain (school projects, group work, unfinished code) are archived and private. Last reviewed on 2026-11-18.
 
-### Cloud & Infrastructure
+## Published repositories
 
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
-![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=google-cloud&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
-![Helm](https://img.shields.io/badge/Helm-0F1689?style=flat-square&logo=helm&logoColor=white)
-![ArgoCD](https://img.shields.io/badge/ArgoCD-EF7B4D?style=flat-square&logo=argo&logoColor=white)
+State read on GitHub on 2026-11-18.
 
-### CI/CD & Security
+| Repository | What it is | State |
+| --- | --- | --- |
+| [rsa-ct-analyzer](https://github.com/PaulPerigault/rsa-ct-analyzer) | Finds weak RSA keys in X.509 certificates and Certificate Transparency logs: small moduli, bad exponents, factorable keys, shared primes (batch GCD, pure Go). | Public since 2026-11-12. Last push 2026-11-18. |
+| [GetUrlCloudRun](https://github.com/PaulPerigault/GetUrlCloudRun) | Read-only Go API that returns the URLs of Cloud Run services, with a deterministic fake provider for offline use and a tested OpenTofu deployment. | Public since 2026-11-12. Last push 2026-11-18. |
+| [bigdata-ai-jobs-market](https://github.com/PaulPerigault/bigdata-ai-jobs-market) | HDFS, Hive, Spark and Jupyter in Docker Compose (images pinned by digest) on an AI job-market dataset, with a tested PySpark ETL. ESIEA coursework; the sample data is synthetic. | Public since 2026-11-13. Last push 2026-11-18. |
+| [portfolio](https://github.com/PaulPerigault/portfolio) | Source of [paulperigault.fr](https://paulperigault.fr): Astro and Tailwind CSS, hosted on Cloudflare Pages, with Cloudflare, GitHub and OVH resources described in OpenTofu. | Public. Last push 2026-11-18. |
+| [design-system](https://github.com/PaulPerigault/design-system) | Design tokens (DTCG), CSS, Astro components, guard rails, a CLI and an MCP server, published as nine `@paulperigault/*` npm packages. Documentation at [design.paulperigault.dev](https://design.paulperigault.dev). | Public. Last push 2026-11-14. |
+| [cv-latex](https://github.com/PaulPerigault/cv-latex) | LaTeX CV compiled by GitHub Actions. | Public. |
 
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
-![GitLab CI](https://img.shields.io/badge/GitLab_CI-FC6D26?style=flat-square&logo=gitlab&logoColor=white)
-![Vault](https://img.shields.io/badge/Vault-FFEC6E?style=flat-square&logo=vault&logoColor=black)
-![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white)
+## Technologies
 
-### Languages
+Each technology below is linked to a file in a public repository that uses it.
 
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=java&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white)
-![Shell](https://img.shields.io/badge/Shell-121011?style=flat-square&logo=gnu-bash&logoColor=white)
+- **Go**: [rsa-ct-analyzer](https://github.com/PaulPerigault/rsa-ct-analyzer/blob/main/go.mod), [GetUrlCloudRun](https://github.com/PaulPerigault/GetUrlCloudRun/blob/main/go.mod), static binaries with CGO off.
+- **OpenTofu** and **Google Cloud Run**: [GetUrlCloudRun `infra/`](https://github.com/PaulPerigault/GetUrlCloudRun/tree/main/infra).
+- **OpenTofu** with Cloudflare, GitHub and OVH providers, **Cloudflare Pages**: [portfolio `infra/`](https://github.com/PaulPerigault/portfolio/tree/develop/infra).
+- **Docker** (multi-stage, non-root, images pinned by digest) and **Docker Compose**: [GetUrlCloudRun `Dockerfile`](https://github.com/PaulPerigault/GetUrlCloudRun/blob/main/Dockerfile), [bigdata-ai-jobs-market `compose.yaml`](https://github.com/PaulPerigault/bigdata-ai-jobs-market/blob/main/compose.yaml).
+- **GitHub Actions**, pinned by commit SHA, with CodeQL, zizmor and OpenSSF Scorecard: [workflows of rsa-ct-analyzer](https://github.com/PaulPerigault/rsa-ct-analyzer/tree/main/.github/workflows).
+- **Task**, **golangci-lint**, **govulncheck**, **gitleaks**, **Lefthook**, **Trivy**, pinned: [rsa-ct-analyzer `tools/go.mod`](https://github.com/PaulPerigault/rsa-ct-analyzer/blob/main/tools/go.mod) and [`Taskfile.yml`](https://github.com/PaulPerigault/rsa-ct-analyzer/blob/main/Taskfile.yml).
+- **Python 3.11**, **PySpark**, **Hadoop HDFS**, **Hive**, **Jupyter**, **uv**: [bigdata-ai-jobs-market](https://github.com/PaulPerigault/bigdata-ai-jobs-market/blob/main/pyproject.toml).
+- **TypeScript**, **Astro**, **Tailwind CSS**, **Vitest**, **Playwright**, axe: [portfolio `package.json`](https://github.com/PaulPerigault/portfolio/blob/develop/package.json), [design-system](https://github.com/PaulPerigault/design-system/blob/main/package.json).
+- **Rust compiled to WebAssembly**: [design-system `crates/`](https://github.com/PaulPerigault/design-system/tree/main/crates).
+- **LaTeX**: [cv-latex](https://github.com/PaulPerigault/cv-latex/tree/main/cv).
 
----
+## Method
 
-### Featured Projects
+- `Taskfile.yml` is the single entry point; `task verify` runs format, lint, tests with the race detector, documentation checks and security scans.
+- Dependencies and tools are pinned. GitHub Actions are pinned by commit SHA. Secrets are scanned in the working tree and in the whole history.
+- Infrastructure is written, formatted and validated by tools; changes reach the cloud only through a reviewed plan, never from CI.
+- Decisions that are not obvious go in an ADR in the repository.
 
-<p align="center">
-  <a href="https://github.com/PaulPerigault/GetUrlCloudRun">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=PaulPerigault&repo=GetUrlCloudRun&theme=react&bg_color=0d1117&title_color=0d9488&icon_color=0d9488&border_color=0d9488&border_radius=8" />
-  </a>
-  <a href="https://github.com/PaulPerigault/appFytBack">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=PaulPerigault&repo=appFytBack&theme=react&bg_color=0d1117&title_color=0d9488&icon_color=0d9488&border_color=0d9488&border_radius=8" />
-  </a>
-</p>
-<p align="center">
-  <a href="https://github.com/PaulPerigault/appFytFront">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=PaulPerigault&repo=appFytFront&theme=react&bg_color=0d1117&title_color=0d9488&icon_color=0d9488&border_color=0d9488&border_radius=8" />
-  </a>
-  <a href="https://github.com/PaulPerigault/PaulPerigault.github.io">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=PaulPerigault&repo=PaulPerigault.github.io&theme=react&bg_color=0d1117&title_color=0d9488&icon_color=0d9488&border_color=0d9488&border_radius=8" />
-  </a>
-</p>
+## Limits
 
----
+- Several repositories are private on purpose: group work, school archives and unfinished code. Their absence here is not an omission, and I do not list technologies that only appear in them.
+- My apprenticeship work, mainly Java and Angular, is not visible on GitHub. It is on my CV and not claimed here.
+- Where a repository was rebuilt from a clean base, its Git dates are the date of the rebuild, not the date of the original work; each README says so in its *Context* section.
 
-### GitHub Stats
+## Contact
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=PaulPerigault&show_icons=true&theme=react&bg_color=0d1117&title_color=0d9488&icon_color=0d9488&border_color=0d9488&border_radius=8" height="165"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PaulPerigault&layout=compact&theme=react&bg_color=0d1117&title_color=0d9488&icon_color=0d9488&border_color=0d9488&border_radius=8" height="165"/>
-</p>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=PaulPerigault&theme=react-dark&bg_color=0d1117&color=0d9488&line=0d9488&point=ffffff&border_radius=8" width="100%"/>
-</p>
+- Site: [paulperigault.fr](https://paulperigault.fr)
+- LinkedIn: [paul-perigault](https://linkedin.com/in/paul-perigault)
+- E-mail: contact@paulperigault.fr
