@@ -1,0 +1,54 @@
+name: snake
+
+# Draws the contribution graph of the owner as an animated snake (Platane/snk) and publishes the two SVG files on the
+# `output` branch, which the README of the profile points to. Nothing is generated at display time: the images are files
+# of this repository. No token other than the one of the run is used, and it only writes the `output` branch.
+on:
+  schedule:
+    - cron: '17 3 * * *' # daily
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: snake
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write # the `output` branch only, see the last step
+    steps:
+      - name: draw the snake
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3.5.0
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      - name: publish on the output branch
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          work="$(mktemp -d)"
+          git -C "$work" init --quiet
+          git -C "$work" remote add origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${REPOSITORY}.git"
+          if git -C "$work" fetch --quiet --depth 1 origin output; then
+            git -C "$work" checkout --quiet -B output FETCH_HEAD
+          else
+            git -C "$work" checkout --quiet --orphan output
+          fi
+          cp dist/*.svg "$work"/
+          git -C "$work" add -A
+          if git -C "$work" diff --cached --quiet; then
+            echo "the snake did not change"
+            exit 0
+          fi
+          git -C "$work" -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit --quiet -m 'chore: update the contribution snake'
+          git -C "$work" push --quiet origin output
