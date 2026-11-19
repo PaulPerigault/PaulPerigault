@@ -6,7 +6,7 @@
 
 </div>
 
-I build small command-line tools and services in Go and Rust, describe infrastructure in OpenTofu, and ship them through CI that pins every action and every image. I study software engineering at ESIEA, with a GDPR minor, and I work as an apprentice in cloud and DevOps. What you see below is what my public repositories prove.
+I build small command-line tools and services in Go and Rust, describe infrastructure in OpenTofu, and ship them through CI that pins every action and every image. I study software engineering at ESIEA, with a GDPR minor, and I work as a DevOps apprentice. What you see below is what my public repositories prove.
 
 <p align="center">
   <a href="https://paulperigault.fr"><img src="https://img.shields.io/badge/paulperigault.fr-0F2027?logo=googlechrome&amp;logoColor=white&amp;style=for-the-badge" alt="Website paulperigault.fr" /></a>
